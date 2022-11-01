@@ -1,14 +1,17 @@
+var input = document.getElementById("search").value;
+
 
 async function quotesapi() {
-    Const cors = 'https://cors-anywhere.herokuapp.com'
-    const proxyUrl = 'https://cors-anywhere.herokuapp.com/
-    let getdata = await fetch(`"https://animechan.vercel.app/api/random"${cors}`);
+    
+    let apiurl=  await  fetch("https://cors-anywhere.herokuapp.com/");
+    let getdata = await fetch("https://animechan.vercel.app/api/random");
     let finaledata = await getdata.json();
-    console.log(finaledata.anime)
-    document.querySelector(".Quotes").innerHTML = finaledata.quote
-    document.querySelector(".anime").innerHTML = finaledata.anime
-    document.querySelector(".anime1").innerHTML = finaledata.character
+    console.log(finaledata)
+    document.querySelector(".quote").innerText = finaledata.quote
+    document.querySelector(".anime").innerText = finaledata.anime
+    document.querySelector(".anime1").innerText = finaledata.character
 
 }
 
+// setInterval(quotesapi,5000);
 quotesapi();
